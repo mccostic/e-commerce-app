@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ecom.Models.ContactMessage>
+
+@{
+    ViewData["Title"] = "Contact Messages";
+}
+
+<h1>Contact Messages</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Date Sent</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var message in Model)
+        {
+            <tr>
+                <td>@message.Name</td>
+                <td>@message.Email</td>
+                <td>@message.Message</td>
+                <td>@message.CreatedDate.ToString("g")</td> <!-- g for general date format -->
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,41 @@
+﻿@model ecom.Models.ViewModels.ContactViewModel
+@{
+    ViewData["Title"] = "Contact Us";
+}
+<div class="container mt-3">
+    <div class="row">
+        <!-- Form Column -->
+        <div class="col-md-4">
+            <h1>@ViewData["Title"]</h1>
+            <form asp-action="Index" method="post">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly"></div>
+
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Message"></label>
+                    <textarea asp-for="Message" class="form-control"></textarea>
+                    <span asp-validation-for="Message" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+
+        <!-- Image Column -->
+        <div class="col-md-8 d-flex align-items-center justify-content-center">
+            <img src="~/images/4112332.jpg" class="img-fluid" alt="Descriptive Alt Text">
+        </div>
+    </div>
+</div>

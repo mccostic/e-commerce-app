@@ -1,0 +1,15 @@
+﻿@model ApplicationUser
+@{
+    ViewData["Title"] = "Delete User";
+}
+
+<h1>Delete User</h1>
+
+<h3>Are you sure you want to delete user "@Model.Email"?</h3>
+
+<form asp-action="DeleteUser" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="UserManagement" class="btn btn-secondary">Cancel</a>
+</form>

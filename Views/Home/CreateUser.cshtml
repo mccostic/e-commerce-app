@@ -1,0 +1,35 @@
+﻿@model ecom.Models.ViewModels.CreateUserViewModel
+@{
+    ViewData["Title"] = "Create User";
+}
+<div class="container mt-3">
+    <div class="row">
+        <!-- Form Column -->
+        <div class="col-md-4">
+            <h1>@ViewData["Title"]</h1>
+            <form asp-action="CreateUser" method="post">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Password"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+
+        <!-- Image Column -->
+        <div class="col-md-8 d-flex align-items-center justify-content-center">
+            <img src="~/images/4112332.jpg" class="img-fluid" alt="Descriptive Alt Text">
+        </div>
+    </div>
+</div>
